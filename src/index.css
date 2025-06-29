@@ -24,7 +24,7 @@ body {
 .main-title-container {
   display: flex;
   flex-direction: column;
-  margin-top: 5rem;
+  margin-top: 3rem;
   margin-left: 8rem;
 }
 
@@ -52,8 +52,9 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 5rem;
+  height: 4rem;
   background-color: rgb(70, 70, 70);
+  border-bottom: solid white 2px;
 }
 
 .header-one {
