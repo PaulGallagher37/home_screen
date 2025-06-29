@@ -6,11 +6,11 @@ function Header() {
 
             <div className="header-one">
                 <ul  className="header-ul">
-                    <li><a href="#" className="header-a">Home</a></li> 
-                    <li><a href="#" className="header-a">Features</a></li> 
-                    <li><a href="#" className="header-a">Pricing</a></li> 
-                    <li><a href="#" className="header-a">FAQs</a></li> 
-                    <li><a href="#" className="header-a">About</a></li> 
+                    <li className="header-li"><a href="#" className="header-a">Home</a></li> 
+                    <li className="header-li"><a href="#" className="header-a">Features</a></li> 
+                    <li className="header-li"><a href="#" className="header-a">Pricing</a></li> 
+                    <li className="header-li"><a href="#" className="header-a">FAQs</a></li> 
+                    <li className="header-li"><a href="#" className="header-a">About</a></li> 
                 </ul> 
             </div>
 

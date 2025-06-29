@@ -11,17 +11,39 @@ html {
 }
 
 body {
-  background-color: rgb(71, 71, 71);
+  background-color: rgb(7, 7, 7);
 }
 
-h1 {
+/*Main CSS*/
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-title-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  margin-left: 8rem;
+}
+
+.main-h1 {
   font-family:"Press Start 2P";
   color: rgb(226, 8, 8);
   font-weight:lighter;
   font-size: 4rem;
-  margin-top: 5rem;
-  margin-left: 3rem;
-  text-shadow: 2px 2px 1px black;
+  text-shadow: 2px 2px 1px rgb(68, 68, 68);
+}
+
+.main-p1 {
+  color: white;
+  font-size: 2rem;
+}
+
+.main-img { 
+  margin-left: 50rem;
+  border-radius: 0.5rem;
 }
 
 /* Header CC */
@@ -31,7 +53,7 @@ h1 {
   flex-direction: row;
   align-items: center;
   height: 5rem;
-  background-color: rgb(43, 43, 43);
+  background-color: rgb(70, 70, 70);
 }
 
 .header-one {
@@ -59,6 +81,12 @@ h1 {
 
 .header-a {
   text-decoration: none;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.header-li {
+  list-style: none;
 }
 
 .header-form {
