@@ -24,7 +24,7 @@ body {
 .main-title-container {
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
+  margin-top: 5rem;
   margin-left: 8rem;
 }
 
@@ -43,17 +43,29 @@ body {
 
 .main-h3-p-img {
   display: flex;
-  flex-direction: column;
-  margin-top: 3rem;
+  flex-direction: row;
+  margin-top: 1rem;
+  padding-left: 7rem;
+  padding-right:7rem;
 }
 
 .main-h3-p {
   display: flex;
   flex-direction: column;
+  padding: 2rem 4rem 2rem 2rem;
+}
+
+.main-h3 {
+  font-size: 2.5rem;
+  color: rgb(212, 212, 212);
+}
+
+.main-p {
+  font-size: 1.25rem;
+  color: rgb(212, 212, 212);
 }
 
 .main-img { 
-  margin-left: 50rem;
   border-radius: 0.5rem;
 }
 

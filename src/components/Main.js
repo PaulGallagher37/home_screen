@@ -13,16 +13,10 @@ function Main(){
             </div> 
             <div className="main-h3-p-img">
                 <div className="main-h3-p">
-                    <h3>What is Home Screen?</h3>
-                    <p>Home screen is a place where you can Lorem 
-                        ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore 
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                        exercitation ullamco laboris nisi ut aliquip ex ea 
-                        commodo consequat. Duis aute irure dolor in reprehenderit 
-                        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa 
-                        qui officia deserunt mollit anim id est laborum.
+                    <h3 className="main-h3">What is Home Screen?</h3>
+                    <p className="main-p">Think of Home Screen as a 'To-Do List' for your backlog. 
+                        A place to list and keep track of all the games you still need 
+                        to start, play, and finish!
                     </p>
                 </div>
                 <img className="main-img" src={main_image} width="650"></img>
