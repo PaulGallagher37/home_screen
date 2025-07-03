@@ -41,6 +41,17 @@ body {
   font-size: 2rem;
 }
 
+.main-h3-p-img {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.main-h3-p {
+  display: flex;
+  flex-direction: column;
+}
+
 .main-img { 
   margin-left: 50rem;
   border-radius: 0.5rem;
