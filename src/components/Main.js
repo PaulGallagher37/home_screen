@@ -1,6 +1,5 @@
-import React from "react";
-import { useEffect } from "react";
 import main_image from "../images/retrogaming.png"
+import controllers from "../images/controllers.jpg"
 
 
 function Main(){
@@ -11,6 +10,8 @@ function Main(){
                 <h1 className="main-h1" id="typed-text">Home Screen</h1>
                 <h2 className="main-p1">Discover, track, analyze your games</h2>
             </div> 
+
+
             <div className="main-h3-p-img">
                 <div className="main-h3-p">
                     <h3 className="main-h3">What is Home Screen?</h3>
@@ -21,6 +22,18 @@ function Main(){
                 </div>
                 <img className="main-img" src={main_image} width="650"></img>
             </div>
+
+
+            <div className="main-h3-p-img">
+                <img className="main-img" src={controllers} width="600" height="350"></img>
+                <div className="main-h3-p">
+                    <h3 className="main-h3">Lists, lists...and more lists!</h3>
+                    <p className="main-p">
+                    </p>
+                </div>
+            </div>
+
+
         </div>
     )
 };
