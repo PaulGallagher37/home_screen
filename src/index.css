@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 16px;
+  font-family: Roboto;
 }
 
 html {
@@ -13,6 +14,78 @@ html {
 body {
   background-color: rgb(7, 7, 7);
 }
+
+/* Header CSS */
+
+.header-page-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 4rem;
+  background-color: rgb(17, 17, 17);
+  border-bottom: solid rgb(109, 109, 109) 2px;
+}
+
+.header-one {
+  display: flex;
+  width: 40%;
+  height: 100%;
+}
+
+.header-ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+.header-two {
+  display: flex;
+  width: 60%;
+  padding-left: 25rem;
+  justify-content: space-around;
+}
+
+.header-a {
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.header-li {
+  list-style: none;
+}
+
+.header-form {
+  border-radius: 0.25rem;
+}
+
+.header-button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-login-button {
+  width: 5rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+}
+
+.header-signup-button {
+  margin-left: 2rem;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-color: rgb(255, 255, 16);
+}
+
+
+
+
+
 
 /*Main CSS*/
 
@@ -97,69 +170,3 @@ body {
 
 
 
-/* Header CC */
-
-.header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 4rem;
-  background-color: rgb(17, 17, 17);
-  border-bottom: solid white 2px;
-}
-
-.header-one {
-  display: flex;
-  width: 50%;
-  height: 100%;
-}
-
-.header-ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-
-.header-two {
-  display: flex;
-  width: 50%;
-  padding-left: 7rem;
-  justify-content: space-around;
-}
-
-.header-a {
-  text-decoration: none;
-  font-size: 1.25rem;
-  color: white;
-}
-
-.header-li {
-  list-style: none;
-}
-
-.header-form {
-  border-radius: 0.25rem;
-}
-
-.header-button-container {
-  display: flex;
-  justify-content: space-around;
-}
-
-.header-login-button {
-  width: 5rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-}
-
-.header-signup-button {
-  margin-left: 1rem;
-  width: 5rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-  background-color: rgb(255, 255, 16);
-}

@@ -9,7 +9,7 @@ function Main(){
         <div className="main-page-container">
             <div className="main-title-container">
                 <h1 className="main-h1" id="typed-text">Home Screen</h1>
-                <h2 className="main-p-1">Discover, track, analyze your games</h2>
+                <h2 className="main-p-1">Organise, list, and analyze your games</h2>
             </div> 
 
 
