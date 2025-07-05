@@ -16,7 +16,7 @@ body {
 
 /*Main CSS*/
 
-.main-container {
+.main-page-container {
   display: flex;
   flex-direction: column;
 }
@@ -36,12 +36,12 @@ body {
   text-shadow: 2px 2px 1px rgb(68, 68, 68);
 }
 
-.main-p1 {
+.main-p-1 {
   color: white;
   font-size: 2rem;
 }
 
-.main-h3-p-img {
+.section1-container1 {
   display: flex;
   flex-direction: row;
   margin-top: 2rem;
@@ -50,20 +50,18 @@ body {
   padding-right:7rem;
 }
 
-.main-h3-p {
+.section1-h3-p {
   display: flex;
   flex-direction: column;
   padding: 5rem 4rem 2rem 2rem;
-  margin-left: 2rem;
-  
 }
 
-.main-h3 {
+.section-h3 {
   font-size: 2.5rem;
   color: rgb(212, 212, 212);
 }
 
-.main-p {
+.section1-p1 {
   font-size: 1.25rem;
   color: rgb(212, 212, 212);
 }
@@ -71,6 +69,33 @@ body {
 .main-img { 
   border-radius: 0.5rem;
 }
+
+.section2-container1 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  padding-left: 10rem;
+  padding-right: 7rem;
+}
+
+.section2-h3-p {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 2rem 2rem 2rem;
+  margin-left: 5rem;
+}
+
+.section2-p1 {
+  font-size: 1.25rem;
+  color: rgb(212, 212, 212);
+}
+
+
+
+
+
+
 
 /* Header CC */
 
