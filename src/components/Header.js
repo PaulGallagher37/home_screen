@@ -6,8 +6,8 @@ function Header() {
 
             <div className="header-one">
                 <ul  className="header-ul">
-                    <li className="header-li"><a href="#" className="header-a">Home</a></li> 
-                    <li className="header-li"><a href="#" className="header-a">Lists</a></li> 
+                    <li className="header-li"><a href="home" className="header-a">Home</a></li> 
+                    <li className="header-li"><a href="list" className="header-a">Lists</a></li> 
                     <li className="header-li"><a href="#" className="header-a">FAQs</a></li>  
                 </ul> 
             </div>
