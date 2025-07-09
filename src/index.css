@@ -165,7 +165,21 @@ body {
 }
 
 
+/* list CSS */
 
+.list-addgame-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.list-addgame-h1 {
+  font-family:"Press Start 2P";
+  color: rgb(226, 8, 8);
+  font-weight:lighter;
+  font-size: 3rem;
+  text-shadow: 2px 2px 1px rgb(68, 68, 68);
+}
 
 
 

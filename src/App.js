@@ -6,7 +6,7 @@ import List from "./components/List";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
+      <Routes path="/">
         <Route index path="home" element={<Home />} />
         <Route path="list" element={<List />} />
       </Routes>

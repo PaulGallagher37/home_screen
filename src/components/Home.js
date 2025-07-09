@@ -1,4 +1,4 @@
-import Header from "./Header";
+import Navbar from "./Navbar";
 import main_image from "../images/retrogaming.png"
 import controllers from "../images/controllers.jpg"
 
@@ -7,7 +7,7 @@ function Home(){
 
     return (
         <div>
-            <Header />
+            <Navbar />
             <div className="main-page-container">
                 <div className="main-title-container">
                     <h1 className="main-h1" id="typed-text">Home Screen</h1>
