@@ -170,6 +170,8 @@ body {
 .list-addgame-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin-top: 4rem;
 }
 
@@ -179,6 +181,13 @@ body {
   font-weight:lighter;
   font-size: 3rem;
   text-shadow: 2px 2px 1px rgb(68, 68, 68);
+}
+
+.list-addgame-input {
+  margin-top: 2rem;
+  width: 20rem;
+  height: 2rem;
+  border-radius: 0.5rem;
 }
 
 
