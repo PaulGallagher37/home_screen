@@ -5,12 +5,10 @@ import List from "./components/List";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes path="/">
-        <Route path="home" element={<Home />} />
-        <Route path="list" element={<List />} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/list" element={<List />} />
       </Routes>
-    </BrowserRouter>
   );
 }
 

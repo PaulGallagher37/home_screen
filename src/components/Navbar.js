@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 function Navbar() {
     return (
@@ -6,9 +6,9 @@ function Navbar() {
 
             <div className="header-one">
                 <ul  className="header-ul">
-                    <li className="header-li"><a href="home" className="header-a">Home</a></li> 
-                    <li className="header-li"><a href="list" className="header-a">Lists</a></li> 
-                    <li className="header-li"><a href="#" className="header-a">FAQs</a></li>  
+                    <li><Link to="/" className="header-li">Home</Link></li>
+                    <li><Link to="/list" className="header-li">Lists</Link></li>
+                    <li><Link to="faq" className="header-li">FAQs</Link></li>
                 </ul> 
             </div>
 
