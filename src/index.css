@@ -15,9 +15,9 @@ body {
   background-color: rgb(7, 7, 7);
 }
 
-/* Header CSS */
+/* Navbar CSS */
 
-.header-page-container {
+.navbar-page-container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -26,37 +26,35 @@ body {
   border-bottom: solid rgb(109, 109, 109) 2px;
 }
 
-.header-one {
+.navbar-one {
   display: flex;
   width: 40%;
   height: 100%;
 }
 
-.header-ul {
+.navbar-ul {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   width: 100%;
   height: 100%;
+  list-style: none;
 }
 
 
-.header-two {
+.navbar-two {
   display: flex;
   width: 60%;
   padding-left: 25rem;
   justify-content: space-around;
 }
 
-.header-a {
+.navbar-li {
+  list-style: none;
   text-decoration: none;
   font-size: 1.25rem;
   color: white;
-}
-
-.header-li {
-  list-style: none;
 }
 
 .header-form {
