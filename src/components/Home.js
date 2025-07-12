@@ -25,12 +25,12 @@ function Home(){
                             Sed facilisis sapien orci, id mattis erat efficitur nec. 
                         </p>
                     </div>
-                    <img className="main-img" src={main_image} width="650"></img>
+                    <img className="main-img" src={main_image} width="600"></img>
                 </div>
 
 
                 <div className="section2-container1">
-                    <img className="main-img" src={controllers} width="600" height="350"></img>
+                    <img className="main-img" src={controllers} width="600" height="325"></img>
                     <div className="section2-h3-p">
                         <h3 className="section-h3">Lists, lists...and more lists!</h3>
                         <p className="section2-p1">
