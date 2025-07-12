@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
 
-function FAQ() {
+function Faq() {
     return (
         <div>
             <Navbar />
@@ -8,4 +8,4 @@ function FAQ() {
     )
 };
 
-export default FAQ;
+export default Faq;

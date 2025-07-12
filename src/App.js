@@ -1,7 +1,7 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import List from "./components/List";
-import FAQ from "./components/faqs";
+import Faq from "./components/Faqs";
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/list" element={<List />} />
-        <Route path="/faq"  element={<FAQ />} />
+        <Route path="/faq"  element={<Faq />} />
       </Routes>
   );
 }
