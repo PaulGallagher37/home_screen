@@ -206,13 +206,14 @@ body {
 }
 
 .list-button {
-  background-color: rgb(12, 226, 12);
+  background-color: rgb(56, 59, 233);
   border-radius: 0.5rem;
   width: 8rem;
+  color: white;
 }
 
 .list-button:hover {
-  color: white;
+  border: solid red 2px;
   transition: 0.25s;
 }
 
