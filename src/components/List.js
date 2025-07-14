@@ -7,7 +7,9 @@ function List() {
     const [ gamesBeat, setGamesBeat ] = useState("");
 
      function handleSubmit(event) {
-            
+            event.preventDefault();
+            const game = event.target.value;
+            console.log(game)
         }
 
     return (
