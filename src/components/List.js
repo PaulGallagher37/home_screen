@@ -17,7 +17,7 @@ function List() {
 
         <div>
             <Navbar />
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="main-list-container"> 
 
                     
@@ -31,11 +31,12 @@ function List() {
                             className="list-addgame-input" 
                             type="text"
                             placeholder="  Add game..."
+                    
                         >
                         </input>
                         <div className="list-button-container">
-                            <button className="list-button" onClick={handleSubmit}>Game to Play</button>
-                            <button className="list-button" onClick={handleSubmit}>Game Beaten</button>
+                            <button className="list-button">Game to Play</button>
+                            <button className="list-button">Game Beaten</button>
                         </div>
                     </div>
 
