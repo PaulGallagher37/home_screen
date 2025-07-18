@@ -5,11 +5,13 @@ function List() {
 
     const [ gamesToPlay, setGamesToPlay ] = useState("");
     const [ gamesBeat, setGamesBeat ] = useState("");
+    const [ game, setGame ] = useState("");
 
-     function handleSubmit(e) {
+     function addGame(e) {
+
             e.preventDefault();
             const game = document.getElementById("input").value;
-            console.log(game)
+            setGamesToPlay([...gamesToPlay, game.trim()])
         }
 
     return (
@@ -23,6 +25,7 @@ function List() {
                     
                     <div className="list-container">
                         <h2>Games to Play</h2>
+                        {gamesToPlay}
                     </div>
 
                     <div className="list-addgame-container">
@@ -30,12 +33,14 @@ function List() {
                         <input 
                             className="list-addgame-input" 
                             type="text"
-                            placeholder="  Add game..."
+                            placeholder="Add game..."
                             id="input"
+                            value={game}
+                            onChange={(e) => setGame(e.target.value)}
                         >
                         </input>
                         <div className="list-button-container">
-                            <button className="list-button" onClick={handleSubmit}>Game to Play</button>
+                            <button className="list-button" onClick={addGame}>Game to Play</button>
                             <button className="list-button">Game Beaten</button>
                         </div>
                     </div>
