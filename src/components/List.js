@@ -8,14 +8,21 @@ function List() {
     const [ game, setGame ] = useState("");
 
 
-     function addGame(e) {
+     function addGameToPlay(e) {
 
             e.preventDefault();
-            const game = document.getElementById("input").value;
-            setGamesToPlay([...gamesToPlay, {text: game.trim()}])
-        }
+            setGame(document.getElementById("input").value);
+            setGamesToPlay([...gamesToPlay, {name: game.trim()}]);
 
+            }
 
+    function addGameBeat(e){
+
+        e.preventDefault();
+        setGame(document.getElementById("input").value);
+        setGamesBeat([...gamesBeat, {name: game.trim()}]);
+
+    }
 
 
 
@@ -24,18 +31,21 @@ function List() {
 
         <div>
             <Navbar />
-            <form>
+            <form id="form">
                 <div className="main-list-container"> 
 
                     
                     <div className="list-container">
-                        <h2>Games to Play</h2>
-                        <ul>
+                        <h2 className="list-h2-header">Games to Play</h2>
+                        <ul className="list-ul">
                             {gamesToPlay.map((games) => (
-                                <li>
-                                    {games.text}
+                                <li className="list-li">
+                                    {games.name}
                                 </li>
                             ))}
+                            <li className="list-li">
+                                Game
+                            </li>
                         </ul>    
                     </div>
 
@@ -51,13 +61,19 @@ function List() {
                         >
                         </input>
                         <div className="list-button-container">
-                            <button className="list-button" onClick={addGame}>Game to Play</button>
-                            <button className="list-button">Game Beaten</button>
+                            <button className="list-button" onClick={addGameToPlay}>Game to Play</button>
+                            <button className="list-button" onClick={addGameBeat}>Game Beaten</button>
                         </div>
                     </div>
 
                     <div className="list-container">
-                        <h2>Games Beat</h2>
+                        <h2 className="list-h2-header">Games Beat</h2>
+                        <ul className="list-ul">
+                            {gamesBeat.map((games) => (
+                                <li className="list-li">{games.name}</li>
+                            ))}
+                            <li className="list-li">Game</li>
+                        </ul>
                     </div>
 
                 </div>
