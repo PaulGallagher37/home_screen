@@ -3,16 +3,21 @@ import { useState } from "react";
 
 function List() {
 
-    const [ gamesToPlay, setGamesToPlay ] = useState("");
-    const [ gamesBeat, setGamesBeat ] = useState("");
+    const [ gamesToPlay, setGamesToPlay ] = useState([]);
+    const [ gamesBeat, setGamesBeat ] = useState([]);
     const [ game, setGame ] = useState("");
+
 
      function addGame(e) {
 
             e.preventDefault();
             const game = document.getElementById("input").value;
-            setGamesToPlay([...gamesToPlay, game.trim()])
+            setGamesToPlay([...gamesToPlay, {text: game.trim()}])
         }
+
+
+
+
 
     return (
 
@@ -25,7 +30,13 @@ function List() {
                     
                     <div className="list-container">
                         <h2>Games to Play</h2>
-                        {gamesToPlay}
+                        <ul>
+                            {gamesToPlay.map((games) => (
+                                <li>
+                                    {games.text}
+                                </li>
+                            ))}
+                        </ul>    
                     </div>
 
                     <div className="list-addgame-container">
