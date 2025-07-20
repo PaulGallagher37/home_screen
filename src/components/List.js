@@ -43,10 +43,7 @@ function List() {
                                     {games.name}
                                 </li>
                             ))}
-                            <li className="list-li">
-                                Game
-                            </li>
-                        </ul>    
+                        </ul>   
                     </div>
 
                     <div className="list-addgame-container">
@@ -72,7 +69,6 @@ function List() {
                             {gamesBeat.map((games) => (
                                 <li className="list-li">{games.name}</li>
                             ))}
-                            <li className="list-li">Game</li>
                         </ul>
                     </div>
 
