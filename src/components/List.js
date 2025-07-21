@@ -7,21 +7,30 @@ function List() {
     const [ gamesBeat, setGamesBeat ] = useState([]);
     const [ game, setGame ] = useState("");
 
+    window.onload = function() {
+        const savedGamesToPlay = localStorage.getItem("gamestoplay")
+        if (savedGamesToPlay) {
+            setGamesToPlay(JSON.parse(savedGamesToPlay));
+        }
+    }
 
-     function addGameToPlay(e) {
+    function addGameToPlay(e) {
+        e.preventDefault();
+        setGame(document.getElementById("input").value);
+        setGamesToPlay([...gamesToPlay, {name: game.trim()}]);
+        saveGamesToPlay();
+    }
 
-            e.preventDefault();
-            setGame(document.getElementById("input").value);
-            setGamesToPlay([...gamesToPlay, {name: game.trim()}]);
-
-            }
 
     function addGameBeat(e){
-
         e.preventDefault();
         setGame(document.getElementById("input").value);
         setGamesBeat([...gamesBeat, {name: game.trim()}]);
 
+    }
+
+    function saveGamesToPlay() {
+        localStorage.setItem("gamestoplay", JSON.stringify(gamesToPlay))
     }
 
 
