@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function List() {
 
@@ -7,18 +7,11 @@ function List() {
     const [ gamesBeat, setGamesBeat ] = useState([]);
     const [ game, setGame ] = useState("");
 
-    window.onload = function() {
-        const savedGamesToPlay = localStorage.getItem("gamestoplay")
-        if (savedGamesToPlay) {
-            setGamesToPlay(JSON.parse(savedGamesToPlay));
-        }
-    }
-
+    
     function addGameToPlay(e) {
         e.preventDefault();
         setGame(document.getElementById("input").value);
         setGamesToPlay([...gamesToPlay, {name: game.trim()}]);
-        saveGamesToPlay();
     }
 
 
@@ -26,12 +19,14 @@ function List() {
         e.preventDefault();
         setGame(document.getElementById("input").value);
         setGamesBeat([...gamesBeat, {name: game.trim()}]);
-
     }
 
-    function saveGamesToPlay() {
-        localStorage.setItem("gamestoplay", JSON.stringify(gamesToPlay))
+    function deleteGame(e) {
+        e.preventDefault();
+        
+        setGamesToPlay([...gamesToPlay])
     }
+
 
 
 
@@ -48,9 +43,12 @@ function List() {
                         <h2 className="list-h2-header">Games to Play</h2>
                         <ul className="list-ul">
                             {gamesToPlay.map((games) => (
-                                <li className="list-li">
-                                    {games.name}
-                                </li>
+                                <div className="list-item-container">
+                                    <li className="list-li">
+                                        {games.name}
+                                    </li>
+                                    <button className="list-button" onClick={deleteGame}>X</button>
+                                </div>
                             ))}
                         </ul>   
                     </div>
@@ -67,8 +65,8 @@ function List() {
                         >
                         </input>
                         <div className="list-button-container">
-                            <button className="list-button" onClick={addGameToPlay}>Game to Play</button>
-                            <button className="list-button" onClick={addGameBeat}>Game Beaten</button>
+                            <button className="list-add-button" onClick={addGameToPlay}>Game to Play</button>
+                            <button className="list-add-button" onClick={addGameBeat}>Game Beaten</button>
                         </div>
                     </div>
 
