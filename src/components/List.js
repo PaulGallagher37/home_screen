@@ -8,10 +8,12 @@ function List() {
     const [ game, setGame ] = useState("");
 
     
-    function addGameToPlay(e) {
+    
+    function addGameToPlay(e){
         e.preventDefault();
         setGame(document.getElementById("input").value);
-        setGamesToPlay([...gamesToPlay, {name: game.trim()}]);
+        setGamesToPlay([...gamesToPlay, { name: game.trim(), id: (gamesToPlay.length + 1) } ]);
+        console.log(game.id)
     }
 
 
@@ -21,13 +23,10 @@ function List() {
         setGamesBeat([...gamesBeat, {name: game.trim()}]);
     }
 
-    function deleteGame(e) {
-        e.preventDefault();
-        
-        setGamesToPlay([...gamesToPlay])
+    function deleteGame(id){
+        const updatedList = gamesToPlay.filter(game => game.id !== id);
+        setGamesToPlay(updatedList)
     }
-
-
 
 
     return (
