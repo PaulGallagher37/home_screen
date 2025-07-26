@@ -5,15 +5,14 @@ function List() {
 
     const [ gamesToPlay, setGamesToPlay ] = useState([]);
     const [ gamesBeat, setGamesBeat ] = useState([]);
-    const [ game, setGame ] = useState("");
+    const [ game, setGame ] = useState();
 
     
     
     function addGameToPlay(e){
         e.preventDefault();
         setGame(document.getElementById("input").value);
-        setGamesToPlay([...gamesToPlay, { name: game.trim(), id: (gamesToPlay.length + 1) } ]);
-        console.log(game.id)
+        setGamesToPlay([...gamesToPlay, {name: game.trim()}]);
     }
 
 
@@ -23,9 +22,8 @@ function List() {
         setGamesBeat([...gamesBeat, {name: game.trim()}]);
     }
 
-    function deleteGame(id){
-        const updatedList = gamesToPlay.filter(game => game.id !== id);
-        setGamesToPlay(updatedList)
+    function deleteGame(name){
+        setGamesToPlay(gamesToPlay.filter((game) => {return game.name !== name}))
     }
 
 
@@ -46,7 +44,7 @@ function List() {
                                     <li className="list-li">
                                         {games.name}
                                     </li>
-                                    <button className="list-button" onClick={deleteGame}>X</button>
+                                    <button className="list-button" onClick={() => deleteGame(games.name)}>X</button>
                                 </div>
                             ))}
                         </ul>   
@@ -59,7 +57,7 @@ function List() {
                             type="text"
                             placeholder="Add game..."
                             id="input"
-                            value={game}
+                            value={game}   
                             onChange={(e) => setGame(e.target.value)}
                         >
                         </input>
