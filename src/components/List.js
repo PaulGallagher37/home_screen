@@ -22,8 +22,12 @@ function List() {
         setGamesBeat([...gamesBeat, {name: game.trim()}]);
     }
 
-    function deleteGame(name){
+    function deleteGameToPlay(name){
         setGamesToPlay(gamesToPlay.filter((game) => {return game.name !== name}))
+    }
+
+     function deleteGamesBeat(name){
+        setGamesBeat(gamesBeat.filter((game) => {return game.name !== name}))
     }
 
 
@@ -44,7 +48,12 @@ function List() {
                                     <li className="list-li">
                                         {games.name}
                                     </li>
-                                    <button className="list-button" onClick={() => deleteGame(games.name)}>X</button>
+                                    <button 
+                                        type="button" 
+                                        className="list-button" 
+                                        onClick={() => deleteGameToPlay(games.name)}
+                                    >X
+                                    </button>
                                 </div>
                             ))}
                         </ul>   
@@ -71,7 +80,15 @@ function List() {
                         <h2 className="list-h2-header">Games Beat</h2>
                         <ul className="list-ul">
                             {gamesBeat.map((games) => (
-                                <li className="list-li">{games.name}</li>
+                                <div className="list-item-container">
+                                    <li className="list-li">{games.name}</li>
+                                    <button 
+                                        type="button" 
+                                        className="list-button" 
+                                        onClick={() => deleteGamesBeat(games.name)}
+                                        >X
+                                        </button>
+                                </div>
                             ))}
                         </ul>
                     </div>
