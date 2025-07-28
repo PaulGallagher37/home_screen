@@ -6,28 +6,31 @@ function List() {
     const [ gamesToPlay, setGamesToPlay ] = useState([]);
     const [ gamesBeat, setGamesBeat ] = useState([]);
     const [ game, setGame ] = useState();
+    const randomNum = Math.round(Math.random() * 1000)
 
     
     
     function addGameToPlay(e){
         e.preventDefault();
         setGame(document.getElementById("input").value);
-        setGamesToPlay([...gamesToPlay, {name: game.trim()}]);
+        setGamesToPlay([...gamesToPlay, {name: game.trim(), id: randomNum }]);
+        setGame("");
     }
 
 
     function addGameBeat(e){
         e.preventDefault();
         setGame(document.getElementById("input").value);
-        setGamesBeat([...gamesBeat, {name: game.trim()}]);
+        setGamesBeat([...gamesBeat, {name: game.trim(), id: randomNum }]);
+        setGame("");
     }
 
-    function deleteGameToPlay(name){
-        setGamesToPlay(gamesToPlay.filter((game) => {return game.name !== name}))
+    function deleteGameToPlay(id){
+        setGamesToPlay(gamesToPlay.filter((game) => {return game.id !== id}))
     }
 
-     function deleteGamesBeat(name){
-        setGamesBeat(gamesBeat.filter((game) => {return game.name !== name}))
+     function deleteGamesBeat(id){
+        setGamesBeat(gamesBeat.filter((game) => {return game.id !== id}))
     }
 
 
@@ -51,7 +54,7 @@ function List() {
                                     <button 
                                         type="button" 
                                         className="list-button" 
-                                        onClick={() => deleteGameToPlay(games.name)}
+                                        onClick={() => deleteGameToPlay(games.id)}
                                     >X
                                     </button>
                                 </div>
@@ -81,13 +84,15 @@ function List() {
                         <ul className="list-ul">
                             {gamesBeat.map((games) => (
                                 <div className="list-item-container">
-                                    <li className="list-li">{games.name}</li>
+                                    <li className="list-li">
+                                        {games.name}
+                                    </li>
                                     <button 
                                         type="button" 
                                         className="list-button" 
-                                        onClick={() => deleteGamesBeat(games.name)}
-                                        >X
-                                        </button>
+                                        onClick={() => deleteGamesBeat(games.id)}
+                                    >X
+                                    </button>
                                 </div>
                             ))}
                         </ul>
