@@ -8,12 +8,16 @@ function List() {
     const [ game, setGame ] = useState();
     const randomNum = Math.round(Math.random() * 1000)
 
+    function capitalised(word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+
     
     
     function addGameToPlay(e){
         e.preventDefault();
-        setGame(document.getElementById("input").value);
-        setGamesToPlay([...gamesToPlay, {name: game.trim(), id: randomNum }]);
+        setGame(document.getElementById("input").value)
+        setGamesToPlay([...gamesToPlay, {name: capitalised(game.trim()), id: randomNum }]);
         setGame("");
     }
 
