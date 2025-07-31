@@ -40,7 +40,9 @@ function List() {
         setGamesBeat(gamesBeat.filter((game) => {return game.id !== id}))
     }
 
-
+    function dragstartHandler(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
     
 
     return (
@@ -55,7 +57,7 @@ function List() {
                         <h2 className="list-h2-header">Games to Play</h2>
                         <ul className="list-ul">
                             {gamesToPlay.map((games) => (
-                                <div className="list-item-container">
+                                <div className="list-item-container" id="gameToPlay" draggable="true">
                                     <li className="list-li">
                                         {games.name}
                                     </li>
