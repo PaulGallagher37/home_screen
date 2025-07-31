@@ -16,7 +16,9 @@ function List() {
     function addGameToPlay(e){
         e.preventDefault();
         setGame(document.getElementById("input").value)
-        setGamesToPlay([...gamesToPlay, {name: capitalise(game.trim()), id: randomNum }]);
+        if (game !== ""){
+            setGamesToPlay([...gamesToPlay, {name: capitalise(game.trim()), id: randomNum }]);
+        }
         setGame("");
     }
 
@@ -24,7 +26,9 @@ function List() {
     function addGameBeat(e){
         e.preventDefault();
         setGame(document.getElementById("input").value);
-        setGamesBeat([...gamesBeat, {name: game.trim(), id: randomNum }]);
+        if (game !== ""){
+            setGamesBeat([...gamesBeat, {name: game.trim(), id: randomNum }]);
+        }
         setGame("");
     }
 
@@ -37,8 +41,9 @@ function List() {
     }
 
 
-    return (
+    
 
+    return (
 
         <div>
             <Navbar />
