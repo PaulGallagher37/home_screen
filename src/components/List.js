@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { DndContext, useDroppable, useDraggable } from "@dnd-kit/core";
 
 function List() {
 
@@ -40,10 +41,7 @@ function List() {
         setGamesBeat(gamesBeat.filter((game) => {return game.id !== id}))
     }
 
-    function dragstartHandler(ev) {
-        ev.dataTransfer.setData("text", ev.target.id);
-    }
-    
+
 
     return (
 
@@ -57,7 +55,7 @@ function List() {
                         <h2 className="list-h2-header">Games to Play</h2>
                         <ul className="list-ul">
                             {gamesToPlay.map((games) => (
-                                <div className="list-item-container" id="gameToPlay" draggable="true">
+                                <div className="list-item-container" id="gameToPlay">
                                     <li className="list-li">
                                         {games.name}
                                     </li>
