@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
-import { useState } from "react";
-import { DndContext, useDroppable, useDraggable } from "@dnd-kit/core";
+import { useState, useEffect } from "react";
+
 
 function List() {
 
@@ -28,7 +28,7 @@ function List() {
         e.preventDefault();
         setGame(document.getElementById("input").value);
         if (game !== ""){
-            setGamesBeat([...gamesBeat, {name: game.trim(), id: randomNum }]);
+            setGamesBeat([...gamesBeat, {name: capitalise(game.trim()), id: randomNum }]);
         }
         setGame("");
     }
@@ -41,6 +41,33 @@ function List() {
         setGamesBeat(gamesBeat.filter((game) => {return game.id !== id}))
     }
 
+    function handleDragStart(e, index){
+        e.dataTransfer.setData("dragIndex", index)
+    };
+
+    function handleDragOver(e){
+        e.preventDefault();
+    }
+
+    function handleDropGamesBeat(e){
+        const dragIndex = e.dataTransfer.getData("dragIndex");
+        const index = parseInt(dragIndex, 10);
+        if (!isNaN(index) && gamesToPlay[index]) {
+            const gameToMove = gamesToPlay[index];
+            setGamesBeat([...gamesBeat, gameToMove]);
+            setGamesToPlay(gamesToPlay.filter((_, i) => i !== index));
+        }
+    }
+
+    function handleDropGamesToPlay(e){
+        const dragIndex = e.dataTransfer.getData("dragIndex");
+        const index = parseInt(dragIndex, 10);
+        if (!isNaN(index) && gamesBeat[index]) {
+            const gameToMove = gamesBeat[index];
+            setGamesToPlay([...gamesToPlay, gameToMove]);
+            setGamesBeat(gamesBeat.filter((_, i) => i !== index));
+        }
+    }
 
 
     return (
@@ -53,19 +80,22 @@ function List() {
                     
                     <div className="list-container">
                         <h2 className="list-h2-header">Games to Play</h2>
-                        <ul className="list-ul">
-                            {gamesToPlay.map((games) => (
-                                <div className="list-item-container" id="gameToPlay">
-                                    <li className="list-li">
-                                        {games.name}
-                                    </li>
-                                    <button 
-                                        type="button" 
-                                        className="list-button" 
-                                        onClick={() => deleteGameToPlay(games.id)}
-                                    >X
-                                    </button>
-                                </div>
+                        <ul className="list-ul" onDragOver={handleDragOver} onDrop={(e) => handleDropGamesToPlay(e)}>
+                            {gamesToPlay.map((games, index) => (
+
+                                
+                                    <div className="list-item-container" id="gameToPlay" draggable={true} onDragStart={(e) => handleDragStart(e, index)}>
+                                        <li className="list-li">
+                                            {games.name}
+                                        </li>
+                                        <button 
+                                            type="button" 
+                                            className="list-button" 
+                                            onClick={() => deleteGameToPlay(games.id)}
+                                        >X
+                                        </button>
+                                    </div>
+                            
                             ))}
                         </ul>   
                     </div>
@@ -89,9 +119,10 @@ function List() {
 
                     <div className="list-container">
                         <h2 className="list-h2-header">Games Beat</h2>
-                        <ul className="list-ul">
-                            {gamesBeat.map((games) => (
-                                <div className="list-item-container">
+                        <ul className="list-ul" onDragOver={handleDragOver} onDrop={(e) => handleDropGamesBeat(e)}>
+                            {gamesBeat.map((games, index) => (
+
+                                <div className="list-item-container"  draggable={true} onDragStart={(e) => handleDragStart(e, index)}>
                                     <li className="list-li">
                                         {games.name}
                                     </li>
@@ -102,6 +133,8 @@ function List() {
                                     >X
                                     </button>
                                 </div>
+
+
                             ))}
                         </ul>
                     </div>
