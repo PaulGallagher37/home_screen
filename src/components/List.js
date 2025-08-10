@@ -6,8 +6,13 @@ function List() {
 
     const [ gamesToPlay, setGamesToPlay ] = useState([]);
     const [ gamesBeat, setGamesBeat ] = useState([]);
-    const [ game, setGame ] = useState();
+    const [ game, setGame ] = useState("");
     const randomNum = Math.round(Math.random() * 1000)
+
+    useEffect(() => {
+        const savedGamesToPlay = JSON.parse(localStorage.getItem("savedgamestoplay") || "[]");
+        setGamesToPlay(savedGamesToPlay);
+    },[])
 
     function capitalise(string){
         return string.split(" ").map(word => word[0].toUpperCase() + word.slice(1)).join(" ");
@@ -16,9 +21,10 @@ function List() {
     
     function addGameToPlay(e){
         e.preventDefault();
-        setGame(document.getElementById("input").value)
-        if (game !== ""){
-            setGamesToPlay([...gamesToPlay, {name: capitalise(game.trim()), id: randomNum }]);
+        const inputValue = document.getElementById("input").value;
+        if (inputValue.trim() !== ""){
+            setGamesToPlay([...gamesToPlay, {name: capitalise(inputValue.trim()), id: randomNum}]);
+            localStorage.setItem("savedgamestoplay", JSON.stringify([...gamesToPlay, {name: capitalise(inputValue.trim()), id: randomNum}]));
         }
         setGame("");
     }
