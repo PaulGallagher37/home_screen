@@ -17,15 +17,18 @@ function List() {
     },[])
 
     function localStorageSetGamesToPlay(input){
-        localStorage.setItem("savedgamestoplay", JSON.stringify([...gamesToPlay, {name: input, id: randomNum}]));
+        localStorage.setItem("savedgamestoplay", JSON.stringify([...gamesToPlay, input]));
     }
 
       function localStorageSetGamesBeat(input){
-        localStorage.setItem("savedgamesbeat", JSON.stringify([...gamesBeat, {name: input, id: randomNum}]));
+        localStorage.setItem("savedgamesbeat", JSON.stringify([...gamesBeat, input]));
     }
 
     function capitalise(string){
-        return string.split(" ").map(word => word[0].toUpperCase() + word.slice(1)).join(" ");
+        return string
+            .split(" ")
+            .map(word => word ? word[0].toUpperCase() + word.slice(1) : "")
+            .join(" ");
     }
 
     
@@ -33,8 +36,9 @@ function List() {
         e.preventDefault();
         const inputValue = document.getElementById("input").value;
         if (inputValue.trim() !== ""){
-            setGamesToPlay([...gamesToPlay, {name: capitalise(inputValue), id: randomNum}]);
-            localStorageSetGamesToPlay(inputValue);
+            const newGame = {name: capitalise(inputValue), id: randomNum}
+            setGamesToPlay([...gamesToPlay, newGame ]);
+            localStorageSetGamesToPlay(newGame);
         }
         setGame("");
     }
@@ -44,8 +48,9 @@ function List() {
         e.preventDefault();
         const inputValue = document.getElementById("input").value;
         if (inputValue.trim() !== ""){
-            setGamesBeat([...gamesBeat, { name: capitalise(inputValue.trim()), id: randomNum }]);
-            localStorageSetGamesBeat(inputValue);
+            const newGame = {name: capitalise(inputValue), id: randomNum}
+            setGamesBeat([...gamesBeat, newGame]);
+            localStorageSetGamesBeat(newGame);
         }
         setGame("");
     }
